@@ -29,6 +29,16 @@ table {
     margin: 0 auto; /* or margin: 0 auto 0 auto */
     border-collapse: collapse;
   }
+  img{
+  	height: 30px;
+  	width:30px; 
+  }
+  td:nth-child(3) {
+	text-align: center;	
+}
+tr:nth-child(even) {
+	background-color: khaki;
+}
 </style>
 </head>
 <body>
