@@ -1,5 +1,3 @@
-
-
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="businessLogics.CSDL"%>
@@ -29,6 +27,7 @@ div {
 }
 table {
     margin: 0 auto; /* or margin: 0 auto 0 auto */
+    border-collapse: collapse;
   }
 </style>
 </head>
@@ -37,11 +36,11 @@ table {
 	<h1>THÔNG TIN KHÁCH HÀNG</h1>
 		<table border="1">
 		<tr>
-			<td>Mã KH</td>
-			<td>Tên khách hàng</td>
-			<td>Giới tính</td>
-			<td>Địa chỉ</td>
-			<td>Điện thoại</td>
+			<th>Mã KH</td>
+			<th>Tên khách hàng</th>
+			<th>Giới tính</th>
+			<th>Địa chỉ</th>
+			<th>Điện thoại</th>
 		</tr>
 		<%while(rs.next()){ %>
 		<tr>
