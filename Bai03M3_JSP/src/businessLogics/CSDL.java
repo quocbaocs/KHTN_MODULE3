@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class CSDL {
 	private static Connection ketNoi;
-	private static String url = "jdbc:mysql://localhost:3306/qlbansua?useUsenicode=true&characterEncoding=UTF-8";
+	private static String url = "jdbc:mysql://localhost:3306/qlbansua?autoReconnect=true&useSSL=false&useUsenicode=true&characterEncoding=UTF-8";
 	private static String user = "root";
-	private static String password = "";
+	private static String password = "quocbao@123";
 
 	public static Connection getKetNoi() {
 		try {
@@ -15,7 +15,7 @@ public class CSDL {
 			ketNoi = DriverManager.getConnection(url, user, password);
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		return ketNoi;
 	}

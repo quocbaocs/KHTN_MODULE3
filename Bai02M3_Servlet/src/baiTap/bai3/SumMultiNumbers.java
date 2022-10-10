@@ -21,7 +21,7 @@ public class SumMultiNumbers extends HttpServlet {
 	 */
 	public SumMultiNumbers() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class SumMultiNumbers extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		String[] arr = request.getParameterValues("arr");
 		int s = 0;
 		for (String item : arr) {

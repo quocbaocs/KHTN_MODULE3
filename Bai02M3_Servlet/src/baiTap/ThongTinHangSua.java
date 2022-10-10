@@ -36,7 +36,7 @@ public class ThongTinHangSua extends HttpServlet {
 			String password = "quocbao@123";
 			 conn = DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -91,7 +91,7 @@ public class ThongTinHangSua extends HttpServlet {
 			out.println("</body>");
 			out.println("</html>");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		

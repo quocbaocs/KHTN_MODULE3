@@ -61,7 +61,7 @@ public class Vd3Servlet extends HttpServlet {
 			
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		out.println("</table>");
 		out.println("</body>");

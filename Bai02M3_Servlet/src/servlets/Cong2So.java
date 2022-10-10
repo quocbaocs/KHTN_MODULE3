@@ -21,7 +21,7 @@ public class Cong2So extends HttpServlet {
 	 */
 	public Cong2So() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**

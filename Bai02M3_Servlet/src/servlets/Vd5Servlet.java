@@ -21,7 +21,7 @@ public class Vd5Servlet extends HttpServlet {
 	 */
 	public Vd5Servlet() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class Vd5Servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

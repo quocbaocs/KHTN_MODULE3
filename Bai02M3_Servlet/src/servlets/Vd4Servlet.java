@@ -21,7 +21,7 @@ public class Vd4Servlet extends HttpServlet {
 	 */
 	public Vd4Servlet() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class Vd4Servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		double a, b, kq;
 		a = Double.parseDouble(request.getParameter("txtA"));
 		b = Double.parseDouble(request.getParameter("txtB"));
