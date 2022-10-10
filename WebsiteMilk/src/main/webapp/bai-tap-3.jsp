@@ -34,8 +34,6 @@ rs = stm.executeQuery(sql);
 <body>
 <div align="center">
 	<table border="1px">
-
-
 		<tr>
 		<td colspan="2" style="background-color: peachpuff; color: red;"><h1>THÔNG TIN CÁC SẢN PHẨM</h1></td>
 		</tr>

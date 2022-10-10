@@ -51,6 +51,8 @@ request.setAttribute("ls", ls);
 	<p>td["two"] = ${td["two"] }</p>
 	<p>Mã loại <%=ls.getMaLoai() %> Tên loại <%=ls.getTenLoai() %></p>
 	<p>Mã loại ${ls.maLoai} Tên loại ${ls.tenLoai}</p>
+	<p>Tên: <%=request.getParameter("ten") %></p>
+	<p>Tên:${param.ten}</p> 
 
 
 </body>
