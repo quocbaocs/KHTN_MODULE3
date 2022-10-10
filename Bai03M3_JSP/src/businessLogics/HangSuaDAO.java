@@ -30,7 +30,6 @@ public class HangSuaDAO implements DAO<HangSua> {
 				return hs;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -39,13 +38,12 @@ public class HangSuaDAO implements DAO<HangSua> {
 
 	@Override
 	public boolean insert(HangSua t) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public void delete(String ma) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -69,7 +67,6 @@ public class HangSuaDAO implements DAO<HangSua> {
 			}
 			return list;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -80,7 +77,6 @@ public class HangSuaDAO implements DAO<HangSua> {
 
 	@Override
 	public boolean update(String ma) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

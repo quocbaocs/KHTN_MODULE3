@@ -3,7 +3,6 @@ package dataTransferObject;
 public class SanPham {
 	private String maSua;
 	private String tenSua;
-	private String maHangSua;
 	private String maLoaiSua;
 	private int trongLuong;
 	private int donGia;

@@ -5,7 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<style type="text/css">
+table{
+background-color: #FF9999;
+}
+tr{
+	margin-top: 10px;
+}
+</style>
 </head>
 
 <body>
@@ -18,33 +25,37 @@
 			</td>
 			</tr>
 				<tr>
-					<td>Mã sữa</td>
+					<td>Mã sữa: </td>
 					<td><input type="text" name="maSua"/></td>
 				</tr>
 				<tr>
-					<td>Tên sữa</td>
+					<td>Tên sữa: </td>
 					<td><input type="text" name="maSua" size="30"/></td>
 				</tr>
 				<tr>
-					<td>Hãng sữa</td>
+					<td>Hãng sữa: </td>
 					<td>
 					
 					</td>
 				</tr>
 				<tr>
-					<td>Loại sữa</td>
+					<td>Loại sữa: </td>
 					<td>
-					
+					<select name="loaiSua">
+						<c:forEach items="${listLoai}" var="loai">
+						<option value="${loai.tenLoaiSua}">${loai.tenLoaiSua }</option>
+					</c:forEach>
+					</select>
 					</td>
 				</tr>
 				<tr>
-					<td>Trọng lượng</td>
+					<td>Trọng lượng: </td>
 					<td>
 					<input type="text" name="maSua"/> (gr hoặc ml)
 					</td>
 				</tr>
 				<tr>
-					<td>Đơn giá</td>
+					<td>Đơn giá: </td>
 					<td>
 					<input type="text" name="maSua"/> (VNĐ)
 					</td>

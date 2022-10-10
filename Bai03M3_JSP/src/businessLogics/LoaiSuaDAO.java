@@ -7,14 +7,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import dataTransferObject.HangSua;
 import dataTransferObject.LoaiSua;
 
 public class LoaiSuaDAO implements DAO<LoaiSua>{
 	private Connection conn;
 	
 	public LoaiSuaDAO() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -34,14 +32,12 @@ public class LoaiSuaDAO implements DAO<LoaiSua>{
 				return ls;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			try {
 				rs.close();
 				stmt.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
@@ -52,13 +48,12 @@ public class LoaiSuaDAO implements DAO<LoaiSua>{
 
 	@Override
 	public boolean insert(LoaiSua t) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public void delete(String ma) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -82,14 +77,12 @@ public class LoaiSuaDAO implements DAO<LoaiSua>{
 			}
 			return list;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			try {
 				rs.close();
 				stmt.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
@@ -100,7 +93,6 @@ public class LoaiSuaDAO implements DAO<LoaiSua>{
 
 	@Override
 	public boolean update(String ma) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	

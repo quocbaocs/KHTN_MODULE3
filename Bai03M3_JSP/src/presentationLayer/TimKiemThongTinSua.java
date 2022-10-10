@@ -31,7 +31,7 @@ public class TimKiemThongTinSua extends HttpServlet {
 		if(keyword!=null) {
 		request.setAttribute("listSanPham", dao.search(keyword));
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("timkiemthongtinsua.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("timkiemthongtinsuatheoten.jsp");
 		rd.forward(request, response);
 	}
 

@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import businessLogics.HangSuaDAO;
 import businessLogics.LoaiSuaDAO;
 import businessLogics.SanPhamDAO;
-import dataTransferObject.LoaiSua;
 
 @WebServlet("/TimKiemThongTinLoaiHangSua")
 public class TimKiemThongTinLoaiHangSua extends HttpServlet {

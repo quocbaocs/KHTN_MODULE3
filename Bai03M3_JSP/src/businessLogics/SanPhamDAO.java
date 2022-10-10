@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import dataTransferObject.LoaiSua;
 import dataTransferObject.SanPham;
 
 public class SanPhamDAO implements DAO<SanPham> {
@@ -43,14 +42,12 @@ public class SanPhamDAO implements DAO<SanPham> {
 				return sp;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			try {
 				rs.close();
 				stmt.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
@@ -62,13 +59,12 @@ public class SanPhamDAO implements DAO<SanPham> {
 
 	@Override
 	public boolean insert(SanPham t) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public void delete(String ma) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -101,7 +97,6 @@ public class SanPhamDAO implements DAO<SanPham> {
 			}
 			return ds;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -110,7 +105,6 @@ public class SanPhamDAO implements DAO<SanPham> {
 
 	@Override
 	public boolean update(String ma) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -142,7 +136,6 @@ public class SanPhamDAO implements DAO<SanPham> {
 			}
 			return ds;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -156,7 +149,6 @@ public class SanPhamDAO implements DAO<SanPham> {
 	}
 
 	public List<SanPham> search(String keyword, String tenLoaiSua, String tenhangSua) {
-		// TODO Auto-generated method stub
 		List<SanPham> ds = null;
 		hangSuaDao = new HangSuaDAO();
 		loaiSuaDao = new LoaiSuaDAO();
@@ -187,7 +179,6 @@ public class SanPhamDAO implements DAO<SanPham> {
 			}
 			return ds;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
