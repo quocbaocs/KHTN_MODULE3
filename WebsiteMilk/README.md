@@ -1,3 +1,6 @@
+http://www.cs.tlu.ee/~jaagup/kool/java/abiinfo/javaeetutorial5/examples/web/bookstore3/web/template/
+https://docs.oracle.com/cd/E19316-01/819-3669/bnaoh/index.html
+
 # Java Bean
 	Java bean là lớp đơn giản thỏa 4 yêu cầu
 	1. thực thi giao tiếp Serializable
@@ -22,3 +25,15 @@
 	trang=2 : vitri=5->9; 	-> limit(trang-1)*sdmt,sdmt
 	trang=3 : vitri=10->14; -> limit(trang-1)*sdmt,sdmt
 	
+## Template
+	Mục đích sử dụng lại
+	Thuộc tính là một cái chuỗi, thuộc tính thứ hai là fgragment
+	
+	- Tag Library Descriptor
+	
+	B1: Tạo folder tags
+	B2: Tạo file có phần mở rộng là tag(chọn file jsp nhưng phần mở rộng là tag)
+		- import <%@ tag language="java" pageEncoding="UTF-8"%> 
+	B3: Khai báo thuộc tính tên, kiểu trong file .tag
+	B4: Tạo ra một trang jsp , bỏ nọi dung trong trang jsp, sau đó chèn <%@taglib tagdir="/WEB-INF/tags" prefix="m"%>
+		
