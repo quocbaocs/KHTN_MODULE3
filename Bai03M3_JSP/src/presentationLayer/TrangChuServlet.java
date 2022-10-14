@@ -31,6 +31,7 @@ public class TrangChuServlet extends HttpServlet {
 		request.setAttribute("listLoaiSua", loaiSuaDao.list());
 		request.setAttribute("listHangSua", hangSuaDao.list());
 		RequestDispatcher rd = request.getRequestDispatcher("themSanPham.jsp");
+		rd.forward(request, response);
 		
 	}
 
