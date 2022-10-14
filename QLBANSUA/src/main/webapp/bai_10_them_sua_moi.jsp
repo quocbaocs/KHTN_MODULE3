@@ -101,7 +101,7 @@
 			<tr>
 				<td>Hình ảnh:</td>
 				<td><input name="hinh" type="text" size="30" id="hinh">
-				<input type="file" id="file" onchange="getSelectionFile()" accept="image/png, image/jpg, image/gif, image/jpeg">
+				<input type="file" id="file" name="file">
 				</td>
 			</tr>
 			<tr>

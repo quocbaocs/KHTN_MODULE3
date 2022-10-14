@@ -12,52 +12,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Thông tin sữa</title>
-
+<link rel="stylesheet" href="css/style.css">
 <style type="text/css">
-
-body {
-	margin: auto;
-	padding: 0;
-}
-table {
-	width: 500PX;
-	border: 1px solid black;
-	margin: auto;
-	padding: 0;
-	border-collapse: collapse;
-}
-tr, td {
-	border: 1px solid black;
-}
-
-td:nth-child(3){
-	text-align: center;
-	
-}
-td:nth-child(4){
-	text-align: center;
-	
-}
-
-h3{
- color: red;
- 	text-align: center;	
-}
-a:active{
-color: red;
-}
-a:link {
-	color: black;
-}
-a:visited {
-	color: black;
-	font-weight: bold;
-}
-a:hover {
-  color: hotpink;
-}
-
-
 </style>
 <%!
 	String sql = "SELECT * FROM SUA, LOAI_SUA, HANG_SUA WHERE SUA.MA_LOAI_SUA = LOAI_SUA.MA_LOAI_SUA "
@@ -120,17 +76,14 @@ a:hover {
 	
 	</table>
 		<p align="center">
-		<%if(trang>1) {%>
-		<a href="?page=1"><<</a>&nbsp;<a href="?page=<%=trang+1%>"><</a>
-		<%} %>
+		
+		<a href="?page=1">&lt;&lt;</a>&nbsp;<a href="?page=<%=trang-1<1?trang:trang-1%>">&lt;</a>
 		
 		<% for(int i=1; i <= tongSoTrang;i++){%>
 			<a href="?page=<%=i%>" style="color: <%=trang==i?"red":"black"%>;"><%=i%></a>
 		<%} %>
 		
-		<%if(trang<tongSoTrang) {%>
-		<a href="?page=<%=trang+1%>" >></a>&nbsp;<a href="?page=<%=tongSoTrang%>">>></a></p>
-		<%} %>
+		<a href="?page=<%=trang+1>tongSoTrang?tongSoTrang:trang+1%>">&gt;</a>&nbsp;<a href="?page=<%=tongSoTrang%>">&gt;&gt;</a>
 
 <%} %>
 </body>

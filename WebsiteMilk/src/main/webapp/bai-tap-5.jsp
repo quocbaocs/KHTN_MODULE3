@@ -36,14 +36,14 @@ tongSoTrang = tsd/soDongTrang + (tsd%soDongTrang!=1?1:0);
 if(request.getParameter("trang")!=null)
 	trang = Integer.parseInt(request.getParameter("trang"));
 int vt = (trang-1)*soDongTrang;
-rs = stm.executeQuery(sql +"limit"+vt+","+soDongTrang);
+rs = stm.executeQuery(sql +" limit "+vt+","+soDongTrang);
 int stt=vt+1;
 
 
 %>
 </head>
 <body>
-<table border="1">
+<table border="1" style="border-collapse: collapse; margin: auto;">
 <caption>THÔNG TIN SỮA</caption>
 			<tr style="text-align: center;">
 				<th>Số STT</th>
@@ -65,5 +65,14 @@ int stt=vt+1;
 			
 			<%} %>
 </table>
+<p align="center">
+	<a href="bai-tap-5.jsp?trang=1">&lt;&lt;</a>
+	<a href="bai-tap-5.jsp?trang=<%=trang-1<1?trang:trang-1%>">&lt;</a>
+	<%for(int i=1; i <=tongSoTrang; i++){ %>
+	<a href="bai-tap-5.jsp?trang=<%=i%>" style="color: <%=trang==i?"red":"black"%>"><%=i %></a>
+	<%} %>
+	<a href="bai-tap-5.jsp?trang=<%=trang+1>tongSoTrang?tongSoTrang:trang+1%>">&gt;</a>
+	<a href="bai-tap-5.jsp?trang=<%=tongSoTrang%>">&gt;&gt;</a>
+</p>
 </body>
 </html>

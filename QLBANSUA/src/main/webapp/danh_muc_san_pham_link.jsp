@@ -83,17 +83,13 @@ if(request.getParameter("mahang")!=null){
 	
 	</table>
 		<p align="center">
-		<%if(trang>1) {%>
-		<a href="?page=1"><<</a>&nbsp;<a href="?page=<%=trang+1%>"><</a>
-		<%} %>
+		<a href="?page=1">&lt;&lt;</a>&nbsp;<a href="?page=<%=trang-1<1?trang:trang-1%>">&lt;</a>
 		
 		<% for(int i=1; i <= tongSoTrang;i++){%>
 			<a href="?page=<%=i%>" style="color: <%=trang==i?"red":"black"%>;"><%=i%></a>
 		<%} %>
 		
-		<%if(trang<tongSoTrang) {%>
-		<a href="?page=<%=trang+1%>" >></a>&nbsp;<a href="?page=<%=tongSoTrang%>">>></a></p>
-		<%} %>
+		<a href="?page=<%=tongSoTrang%>">&gt;</a>&nbsp;<a href="?page=<%=trang+1>tongSoTrang?trang:trang+1%>">&lt;</a>
 
 <%} %>
 
