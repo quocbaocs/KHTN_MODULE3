@@ -19,7 +19,7 @@
 		</tr>
 		<tr>
 			<td width=30% valign="top">
-				<table width=100%">
+				<table width="100%">
                    <tr>
                    	<td> <img src="images/icon_homepage.gif">
 		<a href="bai_12_qltrang.jsp">Trang chủ</a></td>
@@ -51,7 +51,6 @@
                         </td>
                     </tr>
                 </table>
-			</td>
 			<td width=70% valign="top" id="mainArticle">
 				<jsp:invoke fragment="content" />
 			</td>

@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset=UTF-8 " />
-<title>Cập nhật thông tin khách hàng</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<table>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="m"%>
+<m:layout_ct title="Xin chào">
+	
+	<jsp:attribute name="content">
+	
 		<form action="cap_nhat_khach_hang.jsp" method="POST">
 			<table class="tblcapnhat"
 				style="width: 40%; border-collapse: collapse;">
@@ -45,6 +44,6 @@
 
 			</table>
 		</form>
-	</table>
-</body>
-</html>
+	</jsp:attribute>
+
+</m:layout_ct>
