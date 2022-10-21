@@ -26,7 +26,6 @@ public class QuangCaoBL {
 			}
 		} catch (Exception e) {
 			return null;
-			// TODO: handle exception
 		}
 		return dsqc;
 	}

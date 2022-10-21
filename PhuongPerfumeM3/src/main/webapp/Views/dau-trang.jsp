@@ -42,10 +42,10 @@
                 <div class="col-md-8">
                     <div class="user-menu">
                         <ul>
-                            <li>Xin chào: </li>
+                            <li>Xin chào: ${sessionScope.nd.hoTen}</li>
                             <li><a href="trang-gio-hang.jsp"><i class="fa fa-user"></i> Giỏ hàng</a></li>
                             <li><a href="trang-thanh-toan.jsp"><i class="fa fa-user"></i> Thanh toán</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Đăng xuất</a></li>
+                            <li><a href="DangXuatServlet"><i class="fa fa-user"></i> Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
