@@ -48,7 +48,7 @@ public class TimSuaTheoLoaiHangTenServlet extends HttpServlet {
         request.setAttribute("soSP", dsSua.size());
         request.setAttribute("hangSua", hangSua);
         
-        request.getRequestDispatcher("Views/tim-sua-theo-loai-hang-ten-2.jsp").forward(request, response);
+        request.getRequestDispatcher("views/tim-sua-theo-loai-hang-ten-2.jsp").forward(request, response);
 	}
 
 }

@@ -14,8 +14,23 @@ public class Sua implements Serializable {
     private String tpDinhDuong;
     private String loiIch;
     private String hinh;
+    
 
-    public String getMaSua() {
+    public Sua(String maSua, String tenSua, String maLoai, String maHang, int trongLuong, int donGia,
+			String tpDinhDuong, String loiIch, String hinh) {
+		super();
+		this.maSua = maSua;
+		this.tenSua = tenSua;
+		this.maLoai = maLoai;
+		this.maHang = maHang;
+		this.trongLuong = trongLuong;
+		this.donGia = donGia;
+		this.tpDinhDuong = tpDinhDuong;
+		this.loiIch = loiIch;
+		this.hinh = hinh;
+	}
+
+	public String getMaSua() {
         return maSua;
     }
 
