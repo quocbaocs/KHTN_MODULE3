@@ -63,11 +63,9 @@
 		3. Sửa lại trang View/san-pham-moi.jsp với dữ liệu động
 	
 	- Controller:
-		4.Servlet(DangNhapServlet)
-			- Lấy thông tin Email, pasword
-			- Tìm ra NguòiDung
-			-Đặt NguoiDung lên session
-			- Hiển thị họ tên ở Views/dau-trang.jsp
+		4.Servlet(SanPhamMoiSerlet)
+			-List<SanPham>
+			- Trang Views/san-pham-moi.jsp ->include ***
 			-Trả về trang chủ
 	-> Sửa lịa trang-chu.jsp thay Views/san-pham-moi.jsp bằng SanPhamMoiServlet
 	-> Sửa lại cấu hình workspace: Window/Preferences/Web/JSP/validation
