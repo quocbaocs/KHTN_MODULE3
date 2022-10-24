@@ -1,7 +1,8 @@
 <%-- 
     Document   : gio-hang
 --%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
     <div class="product-big-title-area">
         <div class="container">
@@ -78,35 +79,37 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <c:forEach items="${sessionScope.gioHang.danhSachSanPhamMua()}" var="spm">
                                         <tr class="cart_item">
                                             <td class="product-remove">
                                                 <a title="Remove this item" class="remove" href="#">×</a> 
                                             </td>
 
                                             <td class="product-thumbnail">
-                                                <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/product-thumb-2.jpg"></a>
+                                                <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/${spm.hinhAnh }"></a>
                                             </td>
 
                                             <td class="product-name">
-                                                <a href="single-product.html">Ship Your Idea</a> 
+                                                <a href="single-product.html">${spm.tenSanPham}</a> 
                                             </td>
 
                                             <td class="product-price">
-                                                <span class="amount">£15.00</span> 
+                                                <span class="amount">${spm.donGiaKM}</span> 
                                             </td>
 
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
                                                     <input type="button" class="minus" value="-">
-                                                    <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
+                                                    <input type="number" size="4" class="input-text qty text" title="Qty" value="${spm.soLuongMua}" min="0" step="1">
                                                     <input type="button" class="plus" value="+">
                                                 </div>
                                             </td>
 
                                             <td class="product-subtotal">
-                                                <span class="amount">£15.00</span> 
+                                                <span class="amount">${spm.thanhTien()}</span> 
                                             </td>
                                         </tr>
+                                        </c:forEach>
                                         <tr>
                                             <td class="actions" colspan="6">
                                                 <div class="coupon">
@@ -131,7 +134,7 @@
                                     <tbody>
                                         <tr class="cart-subtotal">
                                             <th>Cộng thành tiền</th>
-                                            <td><span class="amount">£15.00</span></td>
+                                            <td><span class="amount">${sessionScope.gioHang.tongTien()}</span></td>
                                         </tr>
 
                                         <tr class="shipping">
@@ -141,7 +144,7 @@
 
                                         <tr class="order-total">
                                             <th>Tổng cộng</th>
-                                            <td><strong><span class="amount">£15.00</span></strong> </td>
+                                            <td><strong><span class="amount">${sessionScope.gioHang.tongTien()}</span></strong> </td>
                                         </tr>
                                     </tbody>
                                 </table>

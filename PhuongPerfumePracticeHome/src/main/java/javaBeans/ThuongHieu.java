@@ -1,6 +1,12 @@
 package javaBeans;
 
-public class ThuongHieu {
+import java.io.Serializable;
+
+public class ThuongHieu implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String tenThuongHieu;
 	private String hinhAnh;

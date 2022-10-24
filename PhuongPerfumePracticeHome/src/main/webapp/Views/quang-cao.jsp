@@ -7,15 +7,15 @@
         	<!-- Slider -->
 			<div class="block-slider block-slider4">
 				<ul class="" id="bxslider-home4">
-				<c:forEach items="${listQC}" var="qc">				
+				<c:forEach items="${dsqc}" var="qc">
 					<li>
-						<img src="img/${qc.hinhAnh}" alt="Slide">
+						<img src="img/${qc.hinhAnh}" alt="${qc.hinhAnh}">
 						<div class="caption-group">
 							<h2 class="caption title">
-								${qc.thongDiep}
+								 <span class="primary"><strong>${qc.thongDiep}</strong></span>
 							</h2>
 							<h4 class="caption subtitle">${qc.thongDiep}</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+							<a class="caption button-radius" href="#"><span class="icon"></span>Chi tiết</a>
 						</div>
 					</li>
 					</c:forEach>

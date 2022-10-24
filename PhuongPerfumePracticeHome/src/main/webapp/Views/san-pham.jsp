@@ -1,9 +1,11 @@
 <%-- 
     Document   : san-pham
 --%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
     <div class="product-big-title-area">
         <div class="container">
             <div class="row">
@@ -24,51 +26,32 @@
                 <div class="col-md-4">
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Tìm kiếm</h2>
-                        <form action="">
-                            <input type="text" placeholder="Thông tin tìm kiếm...">
+                        <form action="" method="post">
+                            <input type="text" placeholder="Thông tin tìm kiếm..." name="keyword">
                             <input type="submit" value="Tìm">
                         </form>
                     </div>
-                    
-                  <div class="single-sidebar">
+                 
+                    <div class="single-sidebar">
                         <h2 class="sidebar-title">Sản phẩm</h2>
-                          <!--  <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
+                          <c:forEach var="sp" items="${dsTim}">
+                        <div class="thubmnail-recent">
+                            <a href="trang-san-pham.jsp?id=${sp.id}"><img src="img/${sp.hinhAnh}" class="recent-thumb" alt=""></a>
+                            <h2><a href="trang-san-pham.jsp?id=${sp.id}">${sp.tenSanPham}</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
+                                <ins><fmt:formatNumber value="${sp.donGia }"/> vnđ</ins> <del><fmt:formatNumber value="${sp.donGiaKM}"/> vnđ</del>
                             </div>                             
                         </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>  -->
-                    </div>
-                  
+       					</c:forEach>
+                    </div> 
+                   
                 </div>
                 
                 <div class="col-md-8">
                     <div class="product-content-right">
                         <div class="product-breadcroumb">
-                            <a href="">Trang chủ</a>
-                            <a href="">Cửa hàng</a>
+                            <a href="trang-chu.jsp">Trang chủ</a>
+                            <a href="trang-cua-hang.jsp">Cửa hàng</a>
                             <a href="">${sp.tenSanPham}</a>
                         </div>
                         
@@ -76,48 +59,47 @@
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src="img/${sp.hinhAnh }" alt="">
+                                        <img src="img/${sp.hinhAnh}" alt="">
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="col-sm-6">
                                 <div class="product-inner">
-                                    <h2 class="product-name">${sp.tenSanPham}</h2>
+                                    <h2 class="product-name">${sp.tenSanPham }</h2>
                                     <div class="product-inner-price">
-                                        <ins><fmt:formatNumber value="${sp.donGia}"/> vnđ</ins> <del><fmt:formatNumber value="${sp.donGiaKM}"/> vnđ</del>
-                                    </div>    
+                                        <ins><fmt:formatNumber value="${sp.donGia }"/> vnđ</ins> <del><fmt:formatNumber value="${sp.donGiaKM }"/> vnđ</del>
+                                    </div>   
                                     
-                                    <form action="" class="cart">
+                                    <form action="add-to-cart" class="cart">
+                                    <input type="hidden" name="id" value="${sp.id}">
                                         <div class="quantity">
                                             <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
                                         </div>
-                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
+                                        <button class="add_to_cart_button" type="submit">Giỏ hàng</button>
                                     </form>   
                                     
-                                    <div class="product-inner-category">
-                                        <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
-                                    </div> 
+                                    
                                     
                                     <div role="tabpanel">
                                         <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Miêu tả</a></li>
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mô tả</a></li>
                                             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Đánh giá</a></li>
                                         </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
                                                 <h2>Mô tả</h2>  
-                                         
-
                                                 <p>${sp.moTa}</p>
+
+                                               
                                             </div>
                                             <div role="tabpanel" class="tab-pane fade" id="profile">
-                                                <h2>Đánh giá</h2>
+                                                <h2>Reviews</h2>
                                                 <div class="submit-review">
                                                     <p><label for="name">Name</label> <input name="name" type="text"></p>
                                                     <p><label for="email">Email</label> <input name="email" type="email"></p>
                                                     <div class="rating-chooser">
-                                                        <p>Your rating</p>
+                                                        <div id="rateYo">Your rating</div>
 
                                                         <div class="rating-wrap-post">
                                                             <i class="fa fa-star"></i>
@@ -142,24 +124,23 @@
                         <div class="related-products-wrapper">
                             <h2 class="related-products-title">Sản phẩm liên quan</h2>
                             <div class="related-products-carousel">
-                            <c:forEach var="sp" items="${listSPTH}">
+                              <c:forEach var="sp" items="${dssplq}">
                                 <div class="single-product">
                                     <div class="product-f-image">
                                         <img src="img/${sp.hinhAnh}" alt="">
                                         <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="trang-gio-hang.jsp?id=${sp.id}" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">${sp.tenSanPham }</a></h2>
+                                    <h2><a href="trang-san-pham.jsp?id=${sp.id}">${sp.tenSanPham}</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins><fmt:formatNumber value="${sp.donGia}"/> vnđ</ins> <del><fmt:formatNumber value="${sp.donGiaKM}"/> vnđ</del>
-                                    </div> 
-                                </div>
-                                </c:forEach>           
-                                            
+                                        <ins><fmt:formatNumber value="${sp.donGia }"/> vnđ</ins>
+                                    </div>                            
+                                </div> 
+                                 </c:forEach>                                  
                             </div>
                         </div>
                     </div>                    

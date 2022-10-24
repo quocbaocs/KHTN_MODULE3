@@ -2,66 +2,33 @@ package businessLogics;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javaBeans.SanPham;
+import javaBeans.ThuongHieu;
 
-public class ThuongHieuBL implements DAO<ThuongHieu>{
-	private Connection conn;
-	private Statement stmt;
-	private ResultSet rs;
-	
-	@Override
-	public List<ThuongHieu> listAll() {
-		List<ThuongHieu> ds = new ArrayList<>();
-		ThuongHieu th = null;
-		String query = "SELECT * FROM thuonghieu";
-
-		conn = CSDL.getKetNoi();
-		try {
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(query);
+public class ThuongHieuBL {
+	public static List<ThuongHieu> docTatCa() {
+		List<ThuongHieu> dsth = new ArrayList<ThuongHieu>();
+		String sql = "select * from thuonghieu";
+		try (Connection kn = CSDL.getKetNoi()) {
+			Statement stm = kn.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
 			while (rs.next()) {
-				th = new ThuongHieu();
+				ThuongHieu th = new ThuongHieu();
 				th.setId(rs.getInt("id"));
 				th.setHinhAnh(rs.getString("hinhanh"));
 				th.setTenThuongHieu(rs.getString("tenthuonghieu"));
-				ds.add(th);
+				dsth.add(th);
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (Exception e) {
 			return null;
 		}
-
-		return ds;
+		return dsth;
 	}
-
-	@Override
-	public ThuongHieu find(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public static void main(String[] args) {
+		List<ThuongHieu> ds = docTatCa();
+		ds.forEach(s->System.out.println(s.getTenThuongHieu()));
 	}
-
-	@Override
-	public int insert(ThuongHieu t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int update(ThuongHieu t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }

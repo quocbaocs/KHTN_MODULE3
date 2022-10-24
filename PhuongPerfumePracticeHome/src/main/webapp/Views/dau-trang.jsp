@@ -1,7 +1,8 @@
 <%-- 
     Document   : dau-trang
 --%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,10 +43,10 @@
                 <div class="col-md-8">
                     <div class="user-menu">
                         <ul>
-                            <li>Xin chào: </li>
+                            <li>Xin chào: ${sessionScope.nd.hoTen}</li>
                             <li><a href="trang-gio-hang.jsp"><i class="fa fa-user"></i> Giỏ hàng</a></li>
                             <li><a href="trang-thanh-toan.jsp"><i class="fa fa-user"></i> Thanh toán</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Đăng xuất</a></li>
+                            <li><a href="DangXuatServlet"><i class="fa fa-user"></i> Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,7 +74,8 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.html">Giỏ hàng: <span class="cart-amunt">$100 đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    	<c:set var="cart" value="${sessionScope['cart']}"/>
+                        <a href="trang-gio-hang.jsp">Giỏ hàng: <span class="cart-amunt"><fmt:formatNumber value="${cart.tongTien}"/> đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">${cart.size}</span></a>
                     </div>
                 </div>
             </div>
@@ -93,11 +95,11 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/PhuongPerfumePracticeHome">Trang chủ</a></li>
-                        <li><a href="cua-hang">Cửa hàng</a></li>
-                        <li><a href="trang-san-pham.jsp">Sản phẩm</a></li>
+                        <li class="active"><a href="trang-chu.jsp">Trang chủ</a></li>
+                        <li><a href="trang-cua-hang.jsp">Cửa hàng</a></li>
                         <li><a href="trang-gio-hang.jsp">Giỏ hàng</a></li>
                         <li><a href="trang-thanh-toan.jsp">Thanh toán</a></li>
+                        <li><a href="trang-lien-he">Liên hệ</a></li>
                     </ul>
                 </div>  
             </div>

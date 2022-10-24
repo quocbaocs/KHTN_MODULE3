@@ -1,8 +1,13 @@
 package javaBeans;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Date;
 
-public class QuangCao {
+public class QuangCao implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String hinhAnh;
 	private String thongDiep;

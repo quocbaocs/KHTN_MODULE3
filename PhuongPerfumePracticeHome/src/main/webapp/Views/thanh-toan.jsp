@@ -1,7 +1,8 @@
 <%-- 
     Document   : thanh-toan
 --%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
     <div class="product-big-title-area">
         <div class="container">
@@ -23,42 +24,23 @@
                 <div class="col-md-4">
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Tìm kiếm</h2>
-                        <form action="">
-                            <input type="text" placeholder="Thông tin tìm kiếm...">
+                        <form action="" method="get">
+                            <input type="text" placeholder="Thông tin tìm kiếm..." name="keyword">
                             <input type="submit" value="Tìm">
                         </form>
                     </div>
                     
-                    <div class="single-sidebar">
+                   <div class="single-sidebar">
                         <h2 class="sidebar-title">Sản phẩm</h2>
+                        <c:forEach var="sp" items="${dsTim}">
                         <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
+                            <img src="img/${sp.hinhAnh}" class="recent-thumb" alt="">
+                            <h2><a href="trang-san-pham.jsp?id=${sp.id}">${sp.tenSanPham}</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
+                                <ins><fmt:formatNumber value="${sp.donGia}"/> vnđ</ins> <del><fmt:formatNumber value="${sp.donGia}"/> vnđ</del>
                             </div>                             
                         </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>                             
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
                 
@@ -144,7 +126,8 @@
                                     </div>
 
                                 </div>
-
+								
+								<c:set var="cart" value="${sessionScope['cart']}"/>
                                 <h3 id="order_review_heading">Chi tiết đơn hàng</h3>
 
                                 <div id="order_review" style="position: relative;">
@@ -156,18 +139,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                         <c:forEach var="item" items="${cart.gioHang}">
                                             <tr class="cart_item">
                                                 <td class="product-name">
-                                                    Ship Your Idea <strong class="product-quantity">× 1</strong> </td>
+                                                    ${item.key.tenSanPham} <strong class="product-quantity">× ${item.value}</strong> </td>
+                                            
                                                 <td class="product-total">
-                                                    <span class="amount">£15.00</span> </td>
+                                                    <span class="amount"><fmt:formatNumber value="${item.key.donGia*item.value}"/></span> </td>
                                             </tr>
+                                            </c:forEach>
                                         </tbody>
                                         <tfoot>
 
                                             <tr class="cart-subtotal">
                                                 <th>Cộng thành tiền</th>
-                                                <td><span class="amount">£15.00</span>
+                                                <td><span class="amount"><fmt:formatNumber value="${cart.tongTien}"/> </span>
                                                 </td>
                                             </tr>
 
@@ -183,7 +169,7 @@
 
                                             <tr class="order-total">
                                                 <th>Tổng cộng</th>
-                                                <td><strong><span class="amount">£15.00</span></strong> </td>
+                                                <td><strong><span class="amount"><fmt:formatNumber value="${cart.tongTien}"/> </span></strong> </td>
                                             </tr>
 
                                         </tfoot>
