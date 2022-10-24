@@ -82,4 +82,13 @@
 		Trong trang jsp có đối tượng session, trong servlet thì có HttpSession
 		Một số phương thức khác để lưu trữ là : Hidden Field hoặc Cookie
 	- Cookie: 
+## Cookie
+	- Lưu thông tin trong máy, lần sau mở máy sẽ thấy được thông tin lần trước mình lưu lại
+	- Setcookie lưu vào máy client, getcookie sẽ lấy được thông tin cookie
+	- Là một cách lưu thông tin từ một trang truy cập vào.
+## Filter 
+	- Khi chúng ta gọi lên tập hợp nhiều thông tin nằm trong đối tượng request (khi yêu cầu lên nó nắm hết thông tin)
+	- Lọc chặn các request, và responce
+	- Thường các bộ lọc chứng thực
+	
 		

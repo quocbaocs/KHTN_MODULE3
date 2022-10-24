@@ -31,11 +31,11 @@
                         </div>
                         <p><a href="trang-san-pham.jsp?id=${sp.id}">${sp.tenSanPham}</a></p>
                         <div class="product-carousel-price">
-                            <ins><fmt:formatNumber value="${sp.donGia}"/> vnđ</ins> <del><fmt:formatNumber value="${sp.donGiaKM}"/> vnđ</del>
+                            <ins><fmt:formatNumber value="${sp.donGiaKM}"/> vnđ</ins> <del><fmt:formatNumber value="${sp.donGia}"/> vnđ</del>
                         </div>  
                         
                         <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="trang-gio-hang.jsp?id=${sp.id}">Add to cart</a>
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="add-to-cart?id=${sp.id}">Add to cart</a>
                         </div>                       
                     </div>
                 </div>

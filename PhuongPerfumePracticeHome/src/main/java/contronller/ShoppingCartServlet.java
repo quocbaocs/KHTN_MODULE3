@@ -49,8 +49,9 @@ public class ShoppingCartServlet extends HttpServlet {
 			}
 			session.setAttribute("cart", shoppingCart);
 		}
-
-		response.sendRedirect("trang-chu.jsp");
+		String page = request.getHeader("referer");
+		String currentPage = page.substring(page.lastIndexOf("/")+1);
+		response.sendRedirect(currentPage);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
