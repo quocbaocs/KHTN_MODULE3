@@ -99,7 +99,7 @@
                         <li><a href="trang-cua-hang.jsp">Cửa hàng</a></li>
                         <li><a href="trang-gio-hang.jsp">Giỏ hàng</a></li>
                         <li><a href="trang-thanh-toan.jsp">Thanh toán</a></li>
-                        <li><a href="trang-lien-he">Liên hệ</a></li>
+                        <li><a href="trang-lien-he.jsp">Liên hệ</a></li>
                     </ul>
                 </div>  
             </div>

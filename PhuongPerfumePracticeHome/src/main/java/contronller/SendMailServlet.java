@@ -1,4 +1,4 @@
-package servlets;
+package contronller;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -18,17 +18,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/sendmail.do")
+
+@WebServlet("/sendmail")
 public class SendMailServlet extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setContentType("text/html;charset=utf-8");
-		request.getRequestDispatcher("views/mail/mail.jsp").forward(request, response);
+		request.getRequestDispatcher("trang-chu.jsp").forward(request, response);
 	}
+	
 
+	private static final long serialVersionUID = 1L;
 	private static boolean send(String to, String subject, String text) {
 		try {
 			Properties props = System.getProperties();
@@ -66,7 +66,7 @@ public class SendMailServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
-		String msg = "Failed";
+		String msg = "Gửi biểu mẫu thất bại vui lòng thử lại";
 		String name = request.getParameter("txt_name");
 		String phone = request.getParameter("txt_phone");
 		String content = request.getParameter("txt_message");
@@ -74,11 +74,12 @@ public class SendMailServlet extends HttpServlet {
 		builder.append("Họ và tên: "+name.toUpperCase()+"\n");
 		builder.append("Điện thoại: "+phone+"\n");
 		builder.append(content);
-		if (send(request.getParameter("email"), request.getParameter("subject"), builder.toString())) {
-			msg = "Gửi mail thành công";
+		if (send(request.getParameter("txt_email"), request.getParameter("txt_subject"), builder.toString())) {
+			msg = "Gửi biểu mẫu thành công";
 		}
 		request.setAttribute("msg", msg);
-		doGet(request, response);
+		request.getRequestDispatcher("trang-lien-he.jsp").forward(request, response);
+		
 	}
 
 }
