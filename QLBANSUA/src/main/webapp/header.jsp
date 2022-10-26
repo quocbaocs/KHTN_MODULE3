@@ -1,1 +1,0 @@
-<a href="bai_12_qltrang.jsp"><img src="images/Baner.jpg" width="100%" height="100px"></a>

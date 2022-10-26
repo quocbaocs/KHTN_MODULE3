@@ -1,0 +1,11 @@
+html,
+body {
+	width: 100%;
+	height: auto;
+	font-family: "Cairo", sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+.container {
+	width: 100%;
+}

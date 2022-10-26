@@ -12,8 +12,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Thông tin sữa</title>
-<link rel="stylesheet" href="css/style.css">
+
 <style type="text/css">
+table{
+margin: auto;
+}
 </style>
 <%!
 	String sql = "SELECT * FROM SUA, LOAI_SUA, HANG_SUA WHERE SUA.MA_LOAI_SUA = LOAI_SUA.MA_LOAI_SUA "
@@ -30,7 +33,7 @@
 %>
 </head>
 <body>
-	<h3>DANH MỤC SẢN PHẨM</h3>
+	<h3 align="center">DANH MỤC SẢN PHẨM</h3>
 	<%
 	if(request.getParameter("maloai")!=null){
 		sql = sql+" AND SUA.MA_LOAI_SUA ='"+request.getParameter("maloai")+"'";

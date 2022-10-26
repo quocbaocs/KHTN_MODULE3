@@ -21,7 +21,7 @@ import JavaBeans.HangSua;
 import JavaBeans.LoaiSua;
 import JavaBeans.Sua;
 
-@WebServlet({ "/ThemSuaServlet", "/them_sua.html" })
+@WebServlet("/ThemSuaServlet")
 @MultipartConfig
 public class ThemSuaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -46,8 +46,10 @@ public class ThemSuaServlet extends HttpServlet {
 
 		maLoai = request.getParameter("cboLoai");
 		maHang = request.getParameter("cboHang");
+		
 		List<LoaiSua> dsls = LoaiSuaBL.docTatCa();
 		List<HangSua> dshs = HangSuaBL.docTatCa();
+		
 		if (request.getParameter("maSua") != null) {
 			String masua = request.getParameter("maSua");
 			String tenSua = request.getParameter("tenSua");

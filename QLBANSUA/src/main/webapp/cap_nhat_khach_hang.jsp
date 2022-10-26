@@ -12,7 +12,7 @@
 <title>Cập nhật thông tin khách hàng</title>
 <style type="text/css">
 table {
-width:800px;
+width:400px;
 	 margin: auto;
 }
 
@@ -78,21 +78,7 @@ request.setCharacterEncoding("UTF-8");
 </head>
 <body>
 
-<table>
-		<tr valign="top">
-			<td bgcolor="#aaa" width="100%" colspan="3">
-				<jsp:directive.include file="header.jsp"/>
-			</td>
 
-			
-		</tr>
-		<tr valign="top">
-			<td bgcolor="#aaa" width="20%">
-			<%@include file="menu_trai.jsp" %>
-			</td>
-
-			<td bgcolor="#b5dcb3" height="200" width="60%" class="content">
-			<jsp:include page="nav.jsp"></jsp:include>
 				<!-- content -->
 				<%
 String sql = "SELECT * FROM KHACH_HANG WHERE MA_KHACH_HANG='"+request.getParameter("makh")+"'";
@@ -102,7 +88,7 @@ String sql = "SELECT * FROM KHACH_HANG WHERE MA_KHACH_HANG='"+request.getParamet
 		if(rs.next()){
 %>
 <form action="cap_nhat_khach_hang.jsp" method="POST">
-	<table class="style35">
+	<table>
 	<tr bgcolor="Gold">
 	<td colspan="2"><h3 style="color: red;">CẬP NHẬT THÔNG TIN KHÁCH HÀNG</h3></td>
 	</tr>
@@ -139,21 +125,6 @@ String sql = "SELECT * FROM KHACH_HANG WHERE MA_KHACH_HANG='"+request.getParamet
 	<%}%>
 				
 				
-				<!-- end content-->
-			</td>
-
-			<td bgcolor="#aaa" width="20%">
-			<jsp:directive.include file="menu_phai.jsp"/>
-			</td>
-		</tr>
-		<tr valign="bottom" align="center" style="color: white;">
-			<td bgcolor="# 1E90FF" width="100%" colspan="3">
-				<jsp:directive.include file="footer.jsp"/>
-			</td>
-
-			
-		</tr>
-	</table>
 
 	<p align="center"><b><%=message %></b></p>
 	<p align="center"><a href="bai_11_capnhat_xoa_thongtin_khachhang.jsp">Quay về trang thông tin khách hàng</a></p>
