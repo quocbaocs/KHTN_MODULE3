@@ -7,7 +7,7 @@ public class CSDL {
 	private static Connection ketNoi;
 	private static String url = "jdbc:mysql://localhost:3306/phuong_perfume?useUsenicode=true&characterEncoding=UTF-8";
 	private static String user = "root";
-	private static String password = "";
+	private static String password = "quocbao@123";
 
 	public static Connection getKetNoi() {
 		try {
