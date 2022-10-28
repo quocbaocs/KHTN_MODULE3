@@ -25,7 +25,8 @@ public class SuaServlet extends HttpServlet {
 //		List<Sua> dsSua = SuaBL.docTatCa();
 		// List<Sua> dsSua = SuaBL.docTheoMaHang("DL");
 		// List<Sua> dsSua = docTheoLoaiHangTen("SB","DL", "Cô gái");
-		List<Sua> dsSua = SuaBL.suaGiaCao(5);
+//		List<Sua> dsSua = SuaBL.suaGiaCao(5);
+		List<Sua> dsSua = SuaBL.suaBanChay(3);
 		request.setAttribute("dsSua", dsSua);
 		request.getRequestDispatcher("sua.jsp").forward(request, response);
 	}
