@@ -1,0 +1,41 @@
+@charset "UTF-8";
+table{
+	margin: auto;
+	height: auto;
+	border: none;
+	border-collapse: collapse;
+
+}
+
+.tblttsp,.tblkh,.tblhs >tr,th,td{
+	border-collapse: collapse;
+	border: 1px solid;
+	
+}
+.tblttsp{
+	width: 100%;
+}
+.tbltimkiem{
+	background-color: #e4dcd5	;
+}
+.tblmenu{
+	width: 100%;
+	background-color: rgb(241, 123, 55);
+	border: 0;
+}
+.tblmenu, tr, td{
+	border: none;
+}
+#footer{
+	background-color: blue;
+	color: white;
+}
+.tbldanhmuc{
+	width: 100%;
+	height: auto;
+	border: 1px solid black;
+	text-align: center;
+}
+.tbldanhmuc> tr, td{
+	border: 1px solid black;
+}
