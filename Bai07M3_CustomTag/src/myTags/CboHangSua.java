@@ -14,19 +14,33 @@ import JavaBeans.HangSua;
 import JavaBeans.LoaiSua;
 
 public class CboHangSua extends SimpleTagSupport {
-	//<mt:cboLoaiSua> Loại sữa</mt:cboLoaiSua> --> Loại sữa : [Combobox LoaiSua]
+	// <mt:cboHangSua> Loại sữa</mt:cboHangSua> --> Hãng sữa : [Combobox HangSua]
+
+	private String maHang;
+
+	public String getMaHang() {
+		return maHang;
+	}
+
+	public void setMaHang(String maHang) {
+		this.maHang = maHang;
+	}
+
 	@Override
 	public void doTag() throws JspException, IOException {
-		
+
 		JspWriter out = getJspContext().getOut();
 		JspFragment f = getJspBody();// lấy cái phần mai lan
 		List<HangSua> dshs = HangSuaBL.docTatCa();
-		
+
 		if (f != null)
 			f.invoke(out);
 		out.print("<select name='cblHangSua'");
-		for(HangSua hs : dshs) {
-			out.print("<option value'"+hs.getMaHang()+"'>"+hs.getTenHang()+"</option>");
+		for (HangSua hs : dshs) {
+			if (hs.getMaHang().equals(maHang))
+				out.print("<option value'" + hs.getMaHang() + "' selected>" + hs.getTenHang() + "</option>");
+			else
+				out.print("<option value'" + hs.getMaHang() + "'>" + hs.getTenHang() + "</option>");
 		}
 		out.print("</select>");
 	}

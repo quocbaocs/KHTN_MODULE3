@@ -1,6 +1,8 @@
 package JavaBeans;
 
-public class HangSua {
+import java.io.Serializable;
+
+public class HangSua implements Serializable{
 	private String maHang;
 	private String tenHang;
 	private String diaChi;
