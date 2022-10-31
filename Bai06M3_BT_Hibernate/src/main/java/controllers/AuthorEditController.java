@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import businessLogics.AuthorBL;
 import entities.Author;
 
-@WebServlet("/AuthorEditController")
+@WebServlet("/admin/author/edit.html")
 public class AuthorEditController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
