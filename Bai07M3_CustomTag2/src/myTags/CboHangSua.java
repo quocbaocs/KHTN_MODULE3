@@ -9,9 +9,7 @@ import javax.servlet.jsp.tagext.JspFragment;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 import BusinessLogics.HangSuaBL;
-import BusinessLogics.LoaiSuaBL;
 import JavaBeans.HangSua;
-import JavaBeans.LoaiSua;
 
 public class CboHangSua extends SimpleTagSupport {
 	// <mt:cboHangSua> Loại sữa</mt:cboHangSua> --> Hãng sữa : [Combobox HangSua]
