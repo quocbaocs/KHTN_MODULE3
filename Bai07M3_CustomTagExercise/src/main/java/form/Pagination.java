@@ -51,9 +51,11 @@ public class Pagination extends SimpleTagSupport {
 			if (p == i) {
 				jw.write(String.format("<li class=\"page-item active\"><a class=\"page-link\" href=\"%s\">%d</a></li>",
 						href, i));
+				System.out.println(href);
 			} else {
 				jw.write(String.format("<li class=\"page-item\"><a class=\"page-link\" href=\"%s\">%d</a></li>", href,
 						i));
+				System.out.println(href);
 			}
 		}
 		jw.write("</ul>");

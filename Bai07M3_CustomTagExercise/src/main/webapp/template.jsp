@@ -9,7 +9,7 @@ MODULE 3: LẬP TRÌNH WEB VỚI JAVA
 </div>
 <p>BÀI TẬP CHƯƠNG TRÌNH LẬP TRÌNH VIÊN CÔNG NGHỆ JAVA</p>
 <jsp:include page="ListProductController"></jsp:include>
-<frm:pagination url="${pageContext.request.contextPath}/home.html?p=%s" size="${n}" />
+<frm:pagination url="${pageContext.request.contextPath}/template.jsp?p=%s" size="${n}" />
 </jsp:attribute>
 
 </me:bg>

@@ -32,8 +32,10 @@ public class ThemVaoGioServlet extends HttpServlet {
 			session.setAttribute("gioHang", gioHang);
 		}
 		gioHang.them(idsp, slm);
-		response.sendRedirect("trang-chu.jsp");
-;
+		
+		response.getWriter().print(String.valueOf(gioHang.tongTien()));
+		//response.sendRedirect("trang-chu.jsp");
+
 	}
 
 	
