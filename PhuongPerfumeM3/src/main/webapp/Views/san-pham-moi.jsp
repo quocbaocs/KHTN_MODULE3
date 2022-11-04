@@ -6,8 +6,17 @@
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
+				var text = this.responseText;
+				var tongtien = text.substring(0, text.indexOf(";"));
+				var slh = text.substring(text.indexOf(";")+1);
+				
+				
 				var obTongTien = document.getElementById("tongTien");
-				obTongTien.innerHTML = this.responseText;
+				obTongTien.innerHTML = tongtien
+				
+				var soMatHang = document.getElementById("smh");
+				console.log(slh);
+				soMatHang.innerHTML=slh;
 			}
 		}
 		xhr.open("get", "ThemVaoGioServlet?idsp=" + id + "&slm=1");

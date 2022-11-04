@@ -13,34 +13,34 @@ import javaBeans.GioHang;
 @WebServlet("/ThemVaoGioServlet")
 public class ThemVaoGioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public ThemVaoGioServlet() {
-        super();
-       
-    }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public ThemVaoGioServlet() {
+		super();
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		int idsp, slm;
 		idsp = Integer.parseInt(request.getParameter("idsp"));
 		slm = Integer.parseInt(request.getParameter("slm"));
 		HttpSession session = request.getSession();
 		GioHang gioHang = (GioHang) session.getAttribute("gioHang");
-		if(gioHang==null) {
+		if (gioHang == null) {
 			gioHang = new GioHang();
 			session.setAttribute("gioHang", gioHang);
 		}
 		gioHang.them(idsp, slm);
 		
-		response.getWriter().print(String.valueOf(gioHang.tongTien()));
-		//response.sendRedirect("trang-chu.jsp");
+
+		response.getWriter().print(String.valueOf(gioHang.tongTien() + ";" + gioHang.soMatHang()));
+		// response.sendRedirect("trang-chu.jsp");
 
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 
