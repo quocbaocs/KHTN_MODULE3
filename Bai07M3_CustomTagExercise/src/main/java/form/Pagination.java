@@ -7,6 +7,8 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
+import businessLogics.ProductBL;
+
 public class Pagination extends SimpleTagSupport {
 	private int size;
 	private String url;
@@ -20,7 +22,7 @@ public class Pagination extends SimpleTagSupport {
 
 
 	public void setSize(int size) {
-		this.size = size;
+		this.size = ProductBL.tongSoTrang(size);
 	}
 
 
@@ -45,8 +47,8 @@ public class Pagination extends SimpleTagSupport {
 			p = Integer.parseInt(pageContext.getRequest().getParameter("p"));
 		}
 		JspWriter jw = getJspContext().getOut();
-		jw.write("<ul class=\"pagination\">");
-		for (int i = 1; i <= 3; i++) {
+		jw.write("<ul class=\"pagination\" >");
+		for (int i = 1; i <= size; i++) {
 			String href = String.format(url, i);
 			if (p == i) {
 				jw.write(String.format("<li class=\"page-item active\"><a class=\"page-link\" href=\"%s\">%d</a></li>",

@@ -4795,6 +4795,7 @@ textarea.form-control-lg {
 }
 
 .pagination {
+	margin:auto;
   display: flex;
   padding-left: 0;
   list-style: none;
@@ -11285,4 +11286,5 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
+  
+ }
