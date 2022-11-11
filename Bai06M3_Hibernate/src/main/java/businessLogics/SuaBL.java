@@ -99,7 +99,7 @@ public class SuaBL {
 				.println(s.getTenSua() + " - " + s.getHangSua().getTenHangSua() + " - " + s.getLoaiSua().getTenLoai()));
 	}
 
-	public static void main3(String[] args) {
+	public static void main(String[] args) {
 		List<Sua> ds = docTheoLoaiHangTen("SB", "DL", "Cô gái");
 		ds.forEach(s -> System.out
 				.println(s.getTenSua() + " - " + s.getHangSua().getTenHangSua() + " - " + s.getLoaiSua().getTenLoai()));
@@ -110,7 +110,7 @@ public class SuaBL {
 		ds.forEach(s -> System.out
 				.println(s.getTenSua() + " - " + s.getHangSua().getTenHangSua() + " - " + s.getLoaiSua().getTenLoai()));
 	}
-	public static void main(String[] args) {
+	public static void main6(String[] args) {
 		List<Sua> ds = suaBanChay(3);
 		ds.forEach(s -> System.out
 				.println(s.getTenSua() + " - " + s.getHangSua().getTenHangSua() + " - " + s.getLoaiSua().getTenLoai()));

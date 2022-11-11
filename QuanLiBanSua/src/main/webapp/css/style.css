@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: auto;
+	width: 65%;
+	height: auto;
+	background-color: gray;
+}
+
+#header {
+	height: auto;
+	background-color: orange;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: auto;
+}
+
+.main-content {
+	width: 55%;
+	background-color: white;
+}
+
+.aside-left {
+	width: 25%;
+	background-color: lightyellow;
+}
+
+.aside-right {
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+}
+
+div.aside-right img {
+	width: 100%;
+}
+
+.tbldanhmuc {
+	width: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-left: 15px;
+}
+
+table.tbldanhmuc tr td {
+	border: 1px solid black;
+}
+
+.title-cate {
+	background-color: brown;
+	color: white;
+}
+
+#tbl-cate {
+	background-color: orange;
+	width: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+#footer {
+	background-color: blue;
+	color: white;
+	height: 100px;
+}
+/*template 1-->*/
+.aside-left-1 {
+	width: 20%;
+	background-color: lightyellow;
+	display: block;
+	line-height: 2;
+}
+
+.main-content-1 {
+	width: 80%;
+	background-color: lightyellow;
+	padding-left: 20px;
+}
+
+table.chi-tiet-san-pham {
+	width: 100%;
+}
+
+li {
+	padding-left: 15px;
+}
+
+li:nth-child(odd) {
+	background-color: rgb(243, 243, 167);
+}
+
+/*Pagination */
+.pagination {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.pagination a {
+	color: black;
+	float: left;
+	text-decoration: none;
+}
+
+.pagination a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
+
+/*them sua moi*/
+#tblthem {
+	width: 100%;
+	background-color: lightyellow;
+}
+
+/*form tim kiem*/
+.tbltimkiem {
+	background-color: lightyellow;
+	line-height: 1.5;
+}
+
+/*thong tin cac san pham*/
+.list-product {
+	width: 80%;
+	display: flex;
+	background-color: white;
+	flex-wrap: wrap;
+	padding-left: 30px;
+}
+
+.item {
+	width: 22%;
+	height: auto;
+	border: 1px solid black;
+	margin-left: 15px;
+	margin-top: 20px;
+	display: block;
+	text-align: center;
+	line-height: 1.5;
+}
+
+div.item>img {
+	width: 70%;
+	padding-left: 5px;
+	padding-top: 5px;
+	height: auto;
+}
