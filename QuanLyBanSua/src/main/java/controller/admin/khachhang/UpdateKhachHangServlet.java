@@ -30,8 +30,13 @@ public class UpdateKhachHangServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		String makh = request.getParameter("makh");
 		String tenkh = request.getParameter("tenkh");
+		System.out.println(makh);
+		System.out.println(tenkh);
+		System.out.println(request.getParameter("phai"));
 		boolean phai = request.getParameter("phai").equals("1") ? true : false;
 		String dienthoai = request.getParameter("dienthoai");
 		String diachi = request.getParameter("diachi");
@@ -40,7 +45,7 @@ public class UpdateKhachHangServlet extends HttpServlet {
 		boolean update = KhachHangBL.updateKhachHangID(khNew);
 		if (update == true) {
 			request.setAttribute("message", "Cập nhật thành công");
-			
+
 		} else {
 			request.setAttribute("message", "Cập nhật thất bại bạn kiểm tra lại thông tin");
 		}

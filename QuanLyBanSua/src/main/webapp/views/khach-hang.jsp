@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <h2 align='center'>THÔNG TIN KHÁCH HÀNG</h2>
-<h3 align="center" style="color: red;"><i>${message}</i></h3>
+<h3 align="center" style="color: red;"><i id="messsage"></i></h3>
 	<table class="tblkh" style="width: 100%;"border="1">
 		<tr align='center'>
 			<td>Mã KH</td>
@@ -14,7 +14,7 @@
 			<td><img alt="" src="images/but_xoa.png"></td>
 		</tr>
 		<c:forEach items="${dskh}" var="kh">
-		<tr>
+		<tr id="${kh.maKhachHang}">
 			<td>
 				${kh.maKhachHang}
 			</td>
@@ -32,7 +32,7 @@
 				<a href="trang-update-ttkh.jsp?makh=${kh.maKhachHang}">Sửa</a>
 			</td>
 			<td>
-				<a href="xoa-khach-hang?makh=${kh.maKhachHang}">Xóa</a>
+				<a href="javascript:btnXoa('${kh.maKhachHang}')" >Xóa</a>
 			</td>
 		</tr>
 		</c:forEach>

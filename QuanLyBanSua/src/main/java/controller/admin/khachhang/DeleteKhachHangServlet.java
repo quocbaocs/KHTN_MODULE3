@@ -20,16 +20,17 @@ public class DeleteKhachHangServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		response.setContentType("text/html;charset=UTF-8");
 		String maKhachHang = request.getParameter("makh");
 		boolean delete = KhachHangBL.xoaKhachHangID(maKhachHang);
-		
+		String messsage;
 		if (delete) {
-			request.setAttribute("message", "Xóa thành công khách hàng có mã KH: " + maKhachHang);
+			messsage=( "Xóa thành công khách hàng có mã KH: "+maKhachHang);
 		} else {
-			request.setAttribute("message", "Xóa không thành công vì khách hàng đã mua hàng");
+			messsage=("Xóa không thành công vì khách hàng đã mua hàng");
 		}
-		request.getRequestDispatcher("trang-khach-hang.jsp").forward(request, response);
+		response.getWriter().write(messsage);
+		//request.getRequestDispatcher("trang-khach-hang.jsp").forward(request, response);
 	}
 
 }

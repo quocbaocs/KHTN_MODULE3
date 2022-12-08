@@ -11,4 +11,18 @@
 		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	</p>
 </div>
+<script>
+	function btnXoa(ma) {
+		const xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("messsage").innerHTML = this.responseText;
+				document.getElementById(ma).style.display = "none";
+			}
+		};
+		xhttp.open("GET", "xoa-khach-hang?makh="+ma);
+		xhttp.send();
+	}
+	
+</script>
 <!-- Footer Section End -->

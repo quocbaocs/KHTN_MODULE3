@@ -58,10 +58,9 @@ public class KhachHangBL {
 		boolean check = false;
 		try {
 			Statement stm = kn.createStatement();
-			int rs = stm.executeUpdate(sql);
-			if (rs > 0) {
-				check = true;
-			}
+			stm.executeUpdate(sql);
+
+			check = true;
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -78,12 +77,12 @@ public class KhachHangBL {
 		boolean check = false;
 		try {
 			PreparedStatement prstm = kn.prepareStatement(sql);
-			prstm.setString(1,kh.getTenKhachHang());
-			prstm.setBoolean(2,kh.isPhai());
-			prstm.setString(3,kh.getDiaChi());
-			prstm.setString(4,kh.getDienThoai());
-			prstm.setString(5,kh.getEmail());
-			prstm.setString(6,kh.getMaKhachHang());
+			prstm.setString(1, kh.getTenKhachHang());
+			prstm.setBoolean(2, kh.isPhai());
+			prstm.setString(3, kh.getDiaChi());
+			prstm.setString(4, kh.getDienThoai());
+			prstm.setString(5, kh.getEmail());
+			prstm.setString(6, kh.getMaKhachHang());
 			int rs = prstm.executeUpdate();
 			if (rs > 0) {
 				check = true;
@@ -96,18 +95,18 @@ public class KhachHangBL {
 		}
 
 		return check;
-		
+
 	}
 
 	public static KhachHang docKhachHangID(String makh) {
 		KhachHang kh = null;
-		String sql = "select * from khach_hang where ma_khach_hang='"+makh+"'";
+		String sql = "select * from khach_hang where ma_khach_hang='" + makh + "'";
 		try (Connection con = CSDL.getKetNoi()) {
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery(sql);
-			
+
 			if (rs.next()) {
-				 kh = new KhachHang();
+				kh = new KhachHang();
 				kh.setMaKhachHang(rs.getString("ma_khach_hang"));
 				kh.setTenKhachHang(rs.getString("ten_khach_hang"));
 				kh.setPhai(rs.getBoolean("phai"));
